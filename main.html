@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>File Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<header>
+    <h1>Project Viewer</h1>
+    <p>Explore all projects in the <strong>htdocs</strong> folder</p>
+</header>
+<div class="container">
+    <div class="file-structure">
+        <h3>Folders structure</h3>
+        <button onclick="toggleAllFolders()">Toggle All Folders</button>
+        <button id="clear-selection-button" onclick="clearSelection()">Clear Selection</button>
+        <?= $renderStructure ?>
+    </div>
+    <div class="file-viewer">
+        <h3>File Content</h3>
+        <button id="open-in-new-tab-button" onclick="openInNewTab()" style="display: none;">Open in New Tab</button>
+        <div id="file-content">Click on a file to view its contents.</div>
+    </div>
+</div>
+<footer>
+    <p>&copy; Adin Bešlagić 2024 Project Viewer. All rights reserved.</p>
+    <a href="https://www.linkedin.com/in/beslagicadin/" target="blank">
+        <img alt="Adin Bešlagić LinkedIn"
+             height="36" src="https://raw.githubusercontent.com/gilbarbara/logos/cf1dcda31feaae79d0b0efa5218aa0baa11b2f94/logos/linkedin-icon.svg" width="36"/>
+    </a>
+    <a href="https://www.facebook.com/beslagicadin/" target="blank">
+        <img alt="Adin Bešlagić Facebook"
+             height="36" src="https://raw.githubusercontent.com/gilbarbara/logos/cf1dcda31feaae79d0b0efa5218aa0baa11b2f94/logos/facebook.svg" width="36"/>
+    </a>
+    <a href="https://www.instagram.com/beslagicadin/" target="blank">
+        <img alt="Adin Bešlagić Instagram"
+             height="36" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" width="36"/>
+    </a>
+    <a href="mailto:beslagicadin@gmail.com" target="blank">
+        <img alt="Adin Bešlagić Gmail"
+             height="36" src="https://raw.githubusercontent.com/gilbarbara/logos/cf1dcda31feaae79d0b0efa5218aa0baa11b2f94/logos/google-gmail.svg" width="36"/>
+    </a>
+    <a href="https://github.com/beslagicadin" target="blank">
+        <img alt="Adin Bešlagić Github"
+             height="36" src="https://raw.githubusercontent.com/gilbarbara/logos/cf1dcda31feaae79d0b0efa5218aa0baa11b2f94/logos/github-icon.svg" width="36"/>
+    </a>
+</footer>
+</body>
+</html>
