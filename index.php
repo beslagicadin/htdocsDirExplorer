@@ -1,6 +1,6 @@
 <?php
 function getExcludedPaths($directory) {
-    $exclude = ['.idea', '.vscode'];
+    $exclude = ['.idea', '.vscode', '.gitignore', '.git'];
     $gitignoreFile = $directory . '/.gitignore';
 
     if (is_readable($gitignoreFile)) {

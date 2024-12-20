@@ -21,19 +21,29 @@ function loadFileContent(path, event) {
     const imageExtensions = ['ico', 'jpg', 'jpeg', 'png', 'gif', 'bmp'];
 
     if (imageExtensions.includes(fileExtension)) {
-        fileContentDiv.innerHTML = `<img class="image-preview" src="${path}" alt="Image Preview">`;
+        fileContentDiv.innerHTML = `<img class="image-preview" src="${sanitizePath(path)}" alt="Image Preview">`;
     } else {
         fetch(path)
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.text();
+            })
             .then(data => {
                 fileContentDiv.textContent = data;
             })
             .catch(error => {
-                fileContentDiv.textContent = 'Error loading file: ' + error;
+                fileContentDiv.textContent = 'Error loading file: ' + error.message;
             });
     }
 }
 
+
+function sanitizePath(path) {
+
+    return path.replace(/[^a-zA-Z0-9-_\/.]/g, '');
+}
 
 function openInNewTab() {
     if (selectedFilePath) {
