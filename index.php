@@ -2,7 +2,8 @@
 function getExcludedPaths($directory) {
     $exclude = ['.idea', '.vscode'];
     $gitignoreFile = $directory . '/.gitignore';
-    if (file_exists($gitignoreFile)) {
+
+    if (is_readable($gitignoreFile)) {
         $lines = file($gitignoreFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         foreach ($lines as $line) {
             $line = trim($line);
@@ -16,11 +17,20 @@ function getExcludedPaths($directory) {
 
 function listFilesAndFolders($directory, $exclude) {
     $items = [];
+
+    if (!is_dir($directory) || !is_readable($directory)) {
+        return [];
+    }
+
     foreach (new DirectoryIterator($directory) as $file) {
         if ($file->isDot()) continue;
 
         $filePath = $file->getPathname();
         $relativePath = str_replace($_SERVER['DOCUMENT_ROOT'], '', $filePath);
+
+        if (strpos($filePath, $_SERVER['DOCUMENT_ROOT']) !== 0) {
+            continue;
+        }
 
         $excludeItem = false;
         foreach ($exclude as $excluded) {
@@ -34,15 +44,15 @@ function listFilesAndFolders($directory, $exclude) {
         if ($file->isDir()) {
             $items[] = [
                 'type' => 'dir',
-                'name' => $file->getBasename(),
-                'path' => $relativePath,
+                'name' => htmlspecialchars($file->getBasename()),
+                'path' => htmlspecialchars($relativePath),
                 'children' => listFilesAndFolders($filePath, $exclude)
             ];
         } else {
             $items[] = [
                 'type' => 'file',
-                'name' => $file->getBasename(),
-                'path' => $relativePath
+                'name' => htmlspecialchars($file->getBasename()),
+                'path' => htmlspecialchars($relativePath)
             ];
         }
     }
@@ -76,5 +86,9 @@ ob_start();
 echo renderStructure($fileStructure);
 $renderStructure = ob_get_clean();
 
-include 'main.html';
+if (is_readable('main.html')) {
+    include 'main.html';
+} else {
+    echo 'Error: main.html not found or unreadable.';
+}
 ?>
