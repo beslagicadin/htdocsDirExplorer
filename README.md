@@ -1,4 +1,4 @@
-# HTDOCS Dir Explorer / Project Viewer
+# /htdocs Dir Explorer / Project Viewer
 
 ## Overview
 The **Project Viewer** is a web-based file explorer that dynamically displays the folder and file structure of the `htdocs` directory on your server. It allows users to preview file contents, including text and images, directly in the browser and navigate the folder structure interactively.
@@ -31,7 +31,8 @@ The **Project Viewer** is a web-based file explorer that dynamically displays th
 
 ### Installation
 1. Clone the repository or copy the files to your server's `htdocs` directory.
-2. Access the project via your browser by navigating to `http://localhost/` (or your server's URL).
+2. Access the project via your browser by navigating to `http://localhost/htdocsDirExplorer`
+(or your server's URL with custom extension).
 
 ### Customization
 - **Exclude additional paths**: Add them to the `.gitignore` file or modify the `getExcludedPaths` function in `index.php`.
@@ -53,13 +54,13 @@ The **Project Viewer** is a web-based file explorer that dynamically displays th
 - [Adin Bešlagić](https://github.com/beslagicadin)
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the GPL-3.0 license.
 
 ## Contributing
 If you'd like to contribute:
 1. Fork the repository.
 2. Create a feature branch (`git checkout -b feature-name`).
-3. Commit your changes (`git commit -m 'Add feature'`).
+3. Commit your changes (`git commit -m 'Add feature: "feature name"'`).
 4. Push to the branch (`git push origin feature-name`).
 5. Create a Pull Request.
 
