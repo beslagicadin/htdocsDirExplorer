@@ -1,4 +1,4 @@
-# Project Viewer
+# HTDOCS Dir Explorer / Project Viewer
 
 ## Overview
 The **Project Viewer** is a web-based file explorer that dynamically displays the folder and file structure of the `htdocs` directory on your server. It allows users to preview file contents, including text and images, directly in the browser and navigate the folder structure interactively.
