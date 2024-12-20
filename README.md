@@ -42,10 +42,10 @@ The **Project Viewer** is a web-based file explorer that dynamically displays th
 ## Screenshots
 1. **Main File Explorer Interface**:
     - Displays folder structure with buttons for collapsing/expanding all folders and clearing selection.
-
+      <img alt="Screenshot" src="assets/ss1.png"/>
 2. **File Content Viewer**:
     - Displays the content of text files or previews images when clicked.
-
+      <img alt="Screenshot" src="assets/ss2.png"/>
 ## Technologies Used
 - **Backend**: PHP
 - **Frontend**: HTML, CSS, JavaScript
