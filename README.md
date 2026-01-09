@@ -24,6 +24,12 @@ The **Project Viewer** is a web-based file explorer that dynamically displays th
 - `styles.css`: Stylesheet for customizing the UI appearance.
 - `script.js`: JavaScript file that provides interactivity.
 
+## Requirements
+
+- PHP 7.4 or higher
+- Apache or Nginx web server (e.g., XAMPP, WAMP, or LAMP)
+- A browser with JavaScript enabled
+
 ## Usage
 ### Prerequisites
 - A web server with PHP installed (e.g., Apache, Nginx).
@@ -47,8 +53,8 @@ The **Project Viewer** is a web-based file explorer that dynamically displays th
     - Displays the content of text files or previews images when clicked.
       <img alt="Screenshot" src="assets/ss2.png"/>
 ## Technologies Used
-- **Backend**: PHP
-- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: PHP 7.4+
+- **Frontend**: HTML5, CSS3, JavaScript (vanilla)
 
 ## Author
 - [Adin Bešlagić](https://github.com/beslagicadin)
