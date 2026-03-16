@@ -57,7 +57,7 @@ The **Project Viewer** is a web-based file explorer that dynamically displays th
 - **Frontend**: HTML5, CSS3, JavaScript (vanilla)
 
 ## Author
-- [Adin Bešlagić](https://github.com/beslagicadin)
+- [Adin Bešlagić](https://github.com/beslagicadin) — [beslagicadin.vercel.app](https://beslagicadin.vercel.app)
 
 ## License
 This project is licensed under the GPL-3.0 license.
