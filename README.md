@@ -60,7 +60,7 @@ The **Project Viewer** is a web-based file explorer that dynamically displays th
 - [Adin Bešlagić](https://github.com/beslagicadin) — [beslagicadin.vercel.app](https://beslagicadin.vercel.app)
 
 ## License
-This project is licensed under the GPL-3.0 license.
+This software is all rights reserved. Use, copying, modification, or distribution requires prior written permission from the author. See the [LICENSE](LICENSE) file for full terms or contact [beslagicadin@gmail.com](mailto:beslagicadin@gmail.com) to request permission.
 
 ## Contributing
 If you'd like to contribute:
